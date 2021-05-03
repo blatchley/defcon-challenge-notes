@@ -64,8 +64,13 @@ TLDR because I ran out of time;
 We basically created a pytorch version of the network, and downloaded the webpage to use as a plaintext. Just running our network (which both build the model and also learned keys which decrypted the plaintext.) This explicitly ignored the "key blocks", dropping them from the inputs.
 
 We noticed that this worked great until chunk 103/block 1632~ at which point it broke. We assumed they inserted flag here. 
+
 (3 hours later)
+
 We deduced flag length was 260 bytes, and after that we're learning everything after the flag perfectly as well.
+
 (3 hours later)
-we worked out that we can't brute the key by itself, and pivoted. Instead we used the keys which we decrypted from the other blocks, and instead saved all the keys we decrypted, then started again with a new model which was training to use the provided keys, and the provided cipher/plaintext, and tried to find a model which could decrypt using those keys. 
+
+we worked out that we can't brute the key by itself, and pivoted. Instead we used the keys which we decrypted from the other blocks, and instead saved all the keys we decrypted, then started again with a new model which was training to use the provided keys, and the provided cipher/plaintext, and tried to find a model which could decrypt using those keys.
+
 we then used this model and the key which our first model found at the end of block 102 to decrypt block 103, we added the decryption of that (with the typos fixed,) to the plaintext, and reran first model to get the key at the end of 103, then used that key in the second model to decode second half which had the flag.
