@@ -48,6 +48,26 @@ Finally this needed to be done in very few requests, as 9 gets disabled after ~1
 9(r, k^-1(S + xr)) → flag
 ```
 
+## Operation table
+Here are the final operations we derived over the course of the challenge. 
+
+
+| Option | No. of args | No. of outputs | Comment |operation | Properties |
+|--------|-------------|-------------|------------|------------| --------- |
+| 0  | 0 | 1    | Gives one of 7 random values | Generates one of 7 "random" elements of the group modulo m | |
+| 1  | 1 | 3    | 2nd output is const (m) | get additive inverse modulo m | |
+| 2  | 1 | 3    | 2nd output is const (m) | get multiplicative inverse modulo m |
+| 3  | 2 | 4    | 3rd output is const (m) | addition modulo m | Associative, Commutative |
+| 4  | 2 | 4    | 3rd output is const (m) | multiplication modulo m |Associative, Commutative |
+| 5  | 2 | 4    | 3rd output is const (n) | multiplication modulo n | Associative, Commutative |
+| 6  | 2 | 4    | 3rd output is const (n) | exponentiation modulo n| Not Associative, Not Commutative |
+| 7  | 1 | Many | Censored outputs | DSA Sign (m) = r,s | DSA signing algorithm (with embedded secret key)|
+| 8  | 3 | Many |            | DSA verify (m, r, s) = ?| verify any signature/message |
+| 9  | 2 | Many |            | DSA flag verify (r,s) = ? | verify signature on flag |
+| 10 | 0 | -    | Exits the program | | |
+
+
+
 
 # qoo or ooo
 
