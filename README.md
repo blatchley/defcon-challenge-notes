@@ -1,6 +1,6 @@
 # defcon-challenge-notes
-Notes on crypto defcon challenges, playing under the Norsecode tag as a member of Kalmarunionen.
-These challenges were solved together with several other Norsecode members.
+WIP Notes on crypto defcon challenges, playing under the Norsecode.
+First draft written by Killerdog of Kalmarunionen, these challenges were solved together with several other Norsecode members.
 
 # Nooombers
 This challenge took us a lot longer than it should have. We quickly identified that there were 10 commands we could work with, and that the 144 char sequences each denoted some kind of "number" or group element.
