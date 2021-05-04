@@ -79,6 +79,10 @@ Brute all possible AES keys and win.
 I didn't help solve this one, but it looks like solution iterated strategies to find a good one, and found that winning 4 times in a row with a 0 bet, then always picking quantum coin and not flipping, had a decent winrate, and got through to chat room quite fast. This then showed the key with some smart trick i missed, and got flag.
 
 # Smart Crypto
+Edit: Proper writeup by istlemin here https://github.com/Istlemin/writeups/blob/master/defcon-quals-2021/smart-crypto/sol.py
+
+____________________________________
+
 TLDR because I ran out of time;
 
 We basically created a pytorch version of the network, and downloaded the webpage to use as a plaintext. Just running our network (which both build the model and also learned keys which decrypted the plaintext.) This explicitly ignored the "key blocks", dropping them from the inputs.
